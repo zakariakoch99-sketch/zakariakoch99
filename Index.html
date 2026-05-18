@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakria Koch Nyok Amiang | Engineering | Juba</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;600;700;900&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Epilogue', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    },
+                    colors: {
+                        'brand-dark': '#07090F',
+                        'brand-glass': 'rgba(12, 17, 29, 0.6)',
+                        'brand-blue': '#3B82F6',
+                        'brand-purple': '#A855F7',
+                        'brand-emerald': '#10B981',
+                        'brand-orange': '#F97316',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Premium CSS */
+        ::selection { background-color: #3b82f640; color: white; }
+        
+        /* Smooth Scrolling */
+        html { scroll-behavior: smooth; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #07090F; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3B82F6; }
+
+        /* Background Mesh Pattern */
+        .bg-mesh {
+            background-color: #07090F;
+            background-image: 
+                radial-gradient(at 10% 10%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 90% 10%, rgba(168, 85, 247, 0.1) 0px, transparent 50%),
+                radial-gradient(at 50% 90%, rgba(16, 185, 129, 0.08) 0px, transparent 50%);
+        }
+
+        /* Glassmorphism */
+        .glass { 
+            background: rgba(255, 255, 255, 0.01); 
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+
+        /* Ticker Animation */
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-ticker { animation: ticker 30s linear infinite; }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Magnetic Button Container (JS required) */
+        .magnetic-wrap { display: inline-block; }
+
+        /* Custom Cursor */
+        #custom-cursor {
+            width: 20px; height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+            transform: translate(-50%, -50%);
+        }
+        
+        /* Hide default cursor on desktop */
+        @media (min-width: 1024px) {
+            body { cursor: none; }
+            a, button { cursor: none; }
+        }
+
+        /* Portfolio Tabs Active State */
+        .tab-btn.active {
+            color: white;
+            background: rgba(59, 130, 246, 0.1);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-mesh text-gray-300 font-sans antialiased antialiased">
+
+    <div id="custom-cursor"></div>
+
+    <header class="fixed top-0 left-0 w-full z-50 py-4 px-6 md:px-12">
+        <nav class="max-w-[1600px] mx-auto flex justify-between items-center glass rounded-full px-8 py-4">
+            <a href="#" class="text-2xl font-black tracking-tighter text-white">
+                ZAKRIA<span class="text-brand-blue">KOCH</span>
+            </a>
+            
+            <div class="flex items-center gap-6">
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#home" class="text-gray-400 hover:text-white transition">Home</a>
+                    <a href="#portfolio" class="text-gray-400 hover:text-white transition">Portfolio</a>
+                    <a href="mailto:your.email@example.com" class="text-gray-400 hover:text-white transition">Contact</a>
+                </div>
+                
+                <a href="mailto:your.email@example.com" class="magnetic-wrap">
+                    <button class="magnetic-content bg-white text-brand-dark px-6 py-2.5 rounded-full text-sm font-bold hover:bg-brand-blue hover:text-white transition-colors duration-300">
+                        Let's Talk
+                    </button>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="min-h-screen flex items-center justify-center pt-32 pb-20 px-6 md:px-12">
+        <div class="max-w-[1600px] mx-auto grid md:grid-cols-[1.2fr,1fr] gap-12 lg:gap-20 items-center">
+            
+            <div class="order-2 md:order-1 relative">
+                <div class="absolute -top-20 -left-20 w-64 h-64 bg-brand-blue/10 rounded-full blur-3xl -z-10"></div>
+
+                <div class="mb-6 inline-flex items-center gap-3 py-1.5 px-5 rounded-full glass border border-blue-500/20 text-brand-blue text-xs font-bold tracking-wider uppercase font-mono">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-blue opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-blue"></span>
+                    </span>
+                    Starford University Alumnus
+                </div>
+                
+                <h1 class="text-6xl md:text-8xl font-black text-white mb-6 leading-[0.95] tracking-tighter">
+                    Engineering <br>The <span class="gradient-text">Future.</span>
+                </h1>
+                
+                <p class="text-xl text-gray-400 mb-12 max-w-2xl leading-relaxed font-light">
+                    Software Engineer, VSAT Infrastructure Expert, and CCTV Specialist. <br>Bridging complex code and critical hardware in <span class="text-white font-medium">Juba, South Sudan</span>.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-8">
+                    <a href="#portfolio" class="magnetic-wrap group">
+                        <button class="magnetic-content bg-brand-blue group-hover:bg-blue-600 text-white px-10 py-5 rounded-xl font-bold transition flex items-center gap-3 text-lg">
+                            Explore Expertise 
+                            <i class="fa-solid fa-arrow-down group-hover:translate-y-1 transition-transform"></i>
+                        </button>
+                    </a>
+                    
+                    <div class="flex items-center gap-5 text-2xl text-gray-600">
+                        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="hover:text-sky-500 transition"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#" class="hover:text-blue-600 transition"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="hover:text-pink-500 transition"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-1 md:order-2 flex justify-center md:justify-end items-center magnetic-wrap relative h-[500px] md:h-[650px]" id="hero-photo-container">
+                <div class="magnetic-content relative group">
+                    
+                    <div class="absolute inset-0 border-2 border-brand-blue/30 rounded-3xl translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
+                    <div class="absolute inset-0 border-2 border-brand-purple/20 rounded-3xl translate-x-8 translate-y-8 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-700"></div>
+
+                    <div class="relative glass rounded-3xl p-3 overflow-hidden w-72 h-[400px] md:w-[400px] md:h-[550px] shadow-2xl shadow-brand-dark/50">
+                        <img src="file:///C:/Users/Zakaria%20Koch%20Nyok/Downloads/556.jpg" 
+                             alt="Zakria Koch Nyok Amiang" 
+                             class="w-full h-full object-cover rounded-2xl grayscale group-hover:grayscale-0 transition duration-1000 ease-in-out scale-105 group-hover:scale-100">
+                        
+                        <div class="absolute bottom-6 left-6 right-6 p-5 glass rounded-xl flex items-center gap-4 border border-white/10">
+                            <i class="fa-solid fa-location-dot text-brand-emerald text-2xl animate-pulse"></i>
+                            <div>
+                                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest font-mono">Current Location</p>
+                                <p class="text-lg font-semibold text-white">Juba, South Sudan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-y border-white/5 bg-brand-dark/50 py-6 overflow-hidden">
+        <div class="flex animate-ticker whitespace-nowrap text-gray-700 font-mono text-sm uppercase tracking-[0.3em]">
+            <span class="mx-10">Python</span> <span class="text-brand-blue">•</span>
+            <span class="mx-10">VSAT Installation</span> <span class="text-brand-purple">•</span>
+            <span class="mx-10">SQL Data</span> <span class="text-brand-emerald">•</span>
+            <span class="mx-10">IP CCTV Systems</span> <span class="text-brand-orange">•</span>
+            <span class="mx-10">C++ Development</span> <span class="text-brand-blue">•</span>
+            <span class="mx-10">Network Architecture</span> <span class="text-brand-purple">•</span>
+            <span class="mx-10">Brand Identity</span> <span class="text-brand-emerald">•</span>
+            <span class="mx-10">Python</span> <span class="text-brand-blue">•</span>
+            <span class="mx-10">VSAT Installation</span> <span class="text-brand-purple">•</span>
+            <span class="mx-10">SQL Data</span> <span class="text-brand-emerald">•</span>
+            <span class="mx-10">IP CCTV Systems</span> <span class="text-brand-orange">•</span>
+            <span class="mx-10">C++ Development</span> <span class="text-brand-blue">•</span>
+            <span class="mx-10">Network Architecture</span> <span class="text-brand-purple">•</span>
+            <span class="mx-10">Brand Identity</span> <span class="text-brand-emerald">•</span>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-32 px-6 md:px-12 bg-[#05070a]">
+        <div class="max-w-[1600px] mx-auto">
+            
+            <div class="grid md:grid-cols-[1fr,2fr] gap-16 mb-20 items-end">
+                <div>
+                    <div class="font-mono text-brand-blue text-sm uppercase tracking-widest mb-3">// Specialist fields</div>
+                    <h2 class="text-5xl md:text-6xl font-black text-white leading-tight tracking-tighter">Technical<br>Prowess.</h2>
+                </div>
+                <div class="text-gray-500 text-lg max-w-2xl font-light leading-relaxed">
+                    A unique hybrid expertise spanning sophisticated software development, critical satellite communication hardware, and visual brand identity. Validated by Starford International University.
+                </div>
+            </div>
+            
+            <div class="flex border-b border-white/5 mb-12 gap-2 overflow-x-auto pb-1">
+                <button class="tab-btn active font-mono text-xs uppercase tracking-widest px-6 py-3 border border-transparent rounded-t-lg hover:text-white transition" onclick="openTab(event, 'software')">01. Software</button>
+                <button class="tab-btn font-mono text-xs uppercase tracking-widest px-6 py-3 border border-transparent rounded-t-lg hover:text-white transition" onclick="openTab(event, 'hardware')">02. Infrastructure</button>
+                <button class="tab-btn font-mono text-xs uppercase tracking-widest px-6 py-3 border border-transparent rounded-t-lg hover:text-white transition" onclick="openTab(event, 'creative')">03. Creative</button>
+            </div>
+
+            <div id="tab-content-container">
+                
+                <div id="software" class="tab-content grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass p-10 rounded-3xl border border-brand-blue/10 group hover:border-brand-blue/40 transition-all duration-500 hover:-translate-y-2">
+                        <div class="flex justify-between items-start mb-8">
+                            <i class="fa-solid fa-code text-brand-blue text-5xl"></i>
+                            <span class="font-mono text-gray-700 text-3xl font-bold group-hover:text-brand-blue transition">01</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Core Development</h3>
+                        <p class="text-gray-500 mb-6 font-light">Custom software solutions using Python, SQL, and C++. Focus on back-end logic, data modeling, and performance.</p>
+                        <div class="flex gap-2.5 flex-wrap">
+                            <span class="px-3 py-1 bg-brand-dark/80 border border-white/5 text-xs rounded-full font-mono">Python</span>
+                            <span class="px-3 py-1 bg-brand-dark/80 border border-white/5 text-xs rounded-full font-mono">C++</span>
+                            <span class="px-3 py-1 bg-brand-dark/80 border border-white/5 text-xs rounded-full font-mono">Algorithm Design</span>
+                        </div>
+                    </div>
+                    <div class="glass p-10 rounded-3xl border border-brand-blue/10 group hover:border-brand-blue/40 transition-all duration-500 hover:-translate-y-2">
+                        <div class="flex justify-between items-start mb-8">
+                            <i class="fa-solid fa-database text-brand-blue text-5xl"></i>
+                            <span class="font-mono text-gray-700 text-3xl font-bold group-hover:text-brand-blue transition">02</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Data Systems</h3>
+                        <p class="text-gray-500 mb-6 font-light">Architecting efficient relational databases, writing complex queries, and managing data integrity for critical operations.</p>
+                        <div class="flex gap-2.5 flex-wrap">
+                            <span class="px-3 py-1 bg-brand-dark/80 border border-white/5 text-xs rounded-full font-mono">SQL</span>
+                            <span class="px-3 py-1 bg-brand-dark/80 border border-white/5 text-xs rounded-full font-mono">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-brand-dark/80 border border-white/5 text-xs rounded-full font-mono">Optimization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="hardware" class="tab-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass p-10 rounded-3xl border border-brand-purple/10 group hover:border-brand-purple/40 transition-all duration-500 hover:-translate-y-2">
+                        <div class="flex justify-between items-start mb-8">
+                            <i class="fa-solid fa-satellite text-brand-purple text-5xl"></i>
+                            <span class="font-mono text-gray-700 text-3xl font-bold group-hover:text-brand-purple transition">03</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">VSAT Systems</h3>
+                        <p class="text-gray-500 mb-6 font-light">Deployment, configuration, and maintenance of high-throughput satellite terminals (iDirect, Comtech) for remote connectivity.</p>
+                        <div class="flex gap-2.5 flex-wrap">
+                            <span class="px-3 py-1 bg-brand-dark/80 border border-white/5 text-xs rounded-full font-mono">RF Engineering</span>
+                            <span class="px-3 py-1 bg-brand-dark/80 border border-white/5 text-xs rounded-full font-mono">Link Budget</span>
+                            <span class="px-3 py-1 bg-brand-dark/80 border border-white/5 text-xs rounded-full font-mono">Antenna Alignment</span>
+                        </div>
+                    </div>
+                    <div class="glass p-10 rounded-3xl border border-brand-emerald/10 group hover:border-brand-emerald/40 transition-all duration-500 hover:-translate-y-2">
+                        <div class="flex justify-between items-start mb-8">
+                            <i class="fa-solid fa-shield-halved text-brand-emerald text-5xl"></i>
+                            <span class="font-mono text-gray-700 text-3xl font-bold group-hover:text-brand-emerald transition">04</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Surveillance</h3>
+                        <p class="text-gray-500 mb-6 font-light">Designing enterprise IP CCTV networks, NVR/VMS configuration, and implementing advanced video analytics solutions.</p>
+                        <div class="flex gap-2.5 flex-wrap">
+                            <span class="px-3 py-1 bg-brand-dark/80 border border-white/5 text-xs rounded-full font-mono">IP Networking</span>
+                            <span class="px-3 py-1 bg-brand-dark/80 border border-white/5 text-xs rounded-full font-mono">NVR/VMS</span>
+                            <span class="px-3 py-1 bg-brand-dark/80 border border-white/5 text-xs rounded-full font-mono">Cybersecurity</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="creative" class="tab-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass p-10 rounded-3xl border border-brand-orange/10 group hover:border-brand-orange/40 transition-all duration-500 hover:-translate-y-2">
+                        <div class="flex justify-between items-start mb-8">
+                            <i class="fa-solid fa-pen-nib text-brand-orange text-5xl"></i>
+                            <span class="font-mono text-gray-700 text-3xl font-bold group-hover:text-brand-orange transition">05</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Koch Graphics</h3>
+                        <p class="text-gray-500 mb-6 font-light">Professional visual design services, crafting memorable logos, complete brand identities, and compelling digital assets.</p>
+                        <div class="flex gap-2.5 flex-wrap">
+                            <span class="px-3 py-1 bg-brand-dark/80 border border-white/5 text-xs rounded-full font-mono">Identity Design</span>
+                            <span class="px-3 py-1 bg-brand-dark/80 border border-white/5 text-xs rounded-full font-mono">Logo Creation</span>
+                            <span class="px-3 py-1 bg-brand-dark/80 border border-white/5 text-xs rounded-full font-mono">Typography</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-20 px-6 md:px-12 border-t border-white/5 bg-brand-dark relative overflow-hidden">
+        
+        <div class="absolute bottom-0 left-0 w-full h-[2px] gradient-text opacity-30"></div>
+
+        <div class="max-w-[1600px] mx-auto grid md:grid-cols-[1fr,auto] gap-12 items-center">
+            <div>
+                <h3 class="text-4xl font-black text-white mb-4 tracking-tighter">Let's build something exceptional.</h3>
+                <p class="text-xl text-gray-500 max-w-xl font-light">Zakria Koch Nyok Amiang | Engineering & Infrastructure Specialist | Juba</p>
+                <a href="mailto:your.email@example.com" class="text-brand-blue text-lg hover:text-white transition mt-3 inline-block font-mono">koch.engineering@email.com</a>
+            </div>
+            
+            <a href="#home" class="magnetic-wrap group flex items-center justify-center w-24 h-24 rounded-full glass border border-white/10 hover:border-brand-blue/30 transition-all">
+                <i class="fa-solid fa-arrow-up text-3xl text-gray-600 group-hover:text-brand-blue magnetic-content"></i>
+            </a>
+        </div>
+        
+        <div class="max-w-[1600px] mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between gap-4 text-center sm:text-left">
+            <p class="text-xs font-mono text-gray-700 uppercase tracking-widest">© 2026 Zakria Koch. Digital Portfolio V2.0</p>
+            <div class="flex gap-6 text-sm text-gray-700 justify-center">
+                <a href="#" class="hover:text-white transition">LinkedIn</a>
+                <a href="#" class="hover:text-white transition">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Custom Cursor Logic
+        const cursor = document.getElementById('custom-cursor');
+        document.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        const links = document.querySelectorAll('a, button, .tab-btn');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.style.width = '60px';
+                cursor.style.height = '60px';
+                cursor.style.borderColor = '#3B82F6'; // brand-blue
+                cursor.style.backgroundColor = 'rgba(59, 130, 246, 0.1)';
+            });
+            link.addEventListener('mouseleave', () => {
+                cursor.style.width = '20px';
+                cursor.style.height = '20px';
+                cursor.style.borderColor = 'rgba(255, 255, 255, 0.5)';
+                cursor.style.backgroundColor = 'transparent';
+            });
+        });
+
+        // 2. Magnetic Button Effect
+        const magneticWraps = document.querySelectorAll('.magnetic-wrap');
+        magneticWraps.forEach(wrap => {
+            const content = wrap.querySelector('.magnetic-content');
+            
+            wrap.addEventListener('mousemove', (e) => {
+                const rect = wrap.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                // Content moves slightly
+                content.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                // Wrapper moves even less
+                wrap.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+            });
+
+            wrap.addEventListener('mouseleave', () => {
+                content.style.transform = 'translate(0px, 0px)';
+                wrap.style.transform = 'translate(0px, 0px)';
+            });
+        });
+
+        // 3. Portfolio Tab Logic
+        function openTab(evt, tabName) {
+            // Hide all contents
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.add("hidden");
+            }
+
+            // Deactivate all buttons
+            const tabBtns = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove("active");
+            }
+
+            // Show current tab, activate button
+            document.getElementById(tabName).classList.remove("hidden");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
